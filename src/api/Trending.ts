@@ -9,7 +9,7 @@ declare namespace Params {
   }
 }
 
-declare namespace Schema {
+declare namespace Body {
   export interface Feed {
       url: string;
       title: string;
@@ -34,12 +34,12 @@ declare namespace Schema {
       enclosure: Enclosure;
       categories: any[];
   }
+}
 
-  export interface RootObject {
-      status: string;
-      feed: Feed;
-      items: Item[];
-  }
+declare interface Schema {
+  status: string;
+  feed: Body.Feed;
+  items: Body.Item[];
 }
 
 declare interface Handshake {
@@ -47,7 +47,7 @@ declare interface Handshake {
 }
 
 abstract class AbstractTrendings implements Handshake {
-  getSchemaFromTrendings (): Promise<Schema.RootObject> {
+  getSchemaFromTrendings (): Promise<Schema> {
     throw new Error("Method not implemented.")
   }
 }
@@ -68,7 +68,7 @@ export class Trendings implements AbstractTrendings {
   }
 
   // Methods
-  public async getSchemaFromTrendings (): Promise<Schema.RootObject> {
+  public async getSchemaFromTrendings (): Promise<Schema> {
     const trendingUrl = new URL(this.trendingUrl)
     const engineUrl = new URL(this.engine)
 
@@ -79,7 +79,7 @@ export class Trendings implements AbstractTrendings {
     try {
       const url = Url.format(engineUrl)
 
-      const { data } = await Axios.get<Schema.RootObject>(url)
+      const { data } = await Axios.get<Schema>(url)
 
       return Promise.resolve(data)
     } catch (error) {
