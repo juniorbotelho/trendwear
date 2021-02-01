@@ -9,6 +9,8 @@
     ],               
     "allowJs": false,
     "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "outDir": "./dist",
     "removeComments": true,
     "downlevelIteration": true,
@@ -24,6 +26,16 @@
     "paths": {},
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
-  }
+    "emitDecoratorMetadata": true,
+    "strictNullChecks": false
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.spec.ts"
+  ]
 }
