@@ -6,11 +6,9 @@
       "dom",
       "dom.iterable",
       "esnext"
-    ],               
-    "allowJs": false,
+    ],
+    "allowJs": true,
     "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
     "outDir": "./dist",
     "removeComments": true,
     "downlevelIteration": true,
