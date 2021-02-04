@@ -21,7 +21,10 @@
     "noImplicitReturns": true,
     "moduleResolution": "node",
     "baseUrl": "./",
-    "paths": {},
+    "paths": {
+      "@Trending:Root/*": ["./src/*"],
+      "@Trending:Api/*": ["./src/api/*"]
+    },
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
