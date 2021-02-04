@@ -7,7 +7,18 @@ import Trendwear from "trendwear"
 
 const trends = Trendwear("US") // Too: US, GB, BR, JP...
 
-trends.getSchemaFromTrendings() // Result
+trends.getSchemaFromTrendings()
+  .then((res) => console.log(res.items))
+  .catch((error) => new Error(error))
+```
+## With async function
+```typescript
+const { status, feed, items } = await trends.getSchemaFromTrendings()
+
+// Get info
+console.log('status', status)
+console.log('feed', feed.title)
+console.log('items', items.length)
 ```
 
 ## Result
