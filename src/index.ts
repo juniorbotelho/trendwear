@@ -1,4 +1,6 @@
-import { Trendings } from "./api/Trending"
+import { Trendings } from "./libs/Trending"
+import { HttpApi } from "./api/HttpApi"
+import { Google } from "./api/GoogleApi"
 
 /**
  * This is the main function of Trendwear, it is from here that you can
@@ -10,9 +12,12 @@ import { Trendings } from "./api/Trending"
  * @param geo - lacale where Google Trendings will return an object
  */
 const Trendwear = (geo: string) => {
+  const httpApi = new HttpApi()
+  const googleApi = new Google()
+
   return new Trendings({
-    engine: "https://api.rss2json.com/v1/api.json",
-    trendingUrl: "https://trends.google.com.br/trends/trendingsearches/daily/rss",
+    engine: httpApi.adress,
+    trendingUrl: googleApi.address,
     geo: geo
   })
 }
