@@ -1,7 +1,7 @@
 import { Trendings } from "@Trending:Api/Trending"
 
 describe("Trendings", () => {
-  it("should return Google Trendsings without errors", async () => {
+  it("should return Google Trendings without errors", async () => {
     const Trendwear = (geo: string) => {
       return new Trendings({
         engine: "https://api.rss2json.com/v1/api.json",
