@@ -1,6 +1,6 @@
 {
   "name": "trendwear",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "main": "./dist/src/index.js",
   "repository": "git@github.com:juniorbotelho/trendwear.git",
   "author": "juniorbotelho <junowerther@gmail.com>",
@@ -28,5 +28,11 @@
   },
   "scripts": {
     "test": "jest"
-  }
+  },
+  "keywords": [
+    "google",
+    "trendings",
+    "trends",
+    "tender"
+  ]
 }
